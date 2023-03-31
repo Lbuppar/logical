@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        /* 
+        --------------------Question 1:-------------------------------------
+        Write a function in JavaScript that takes an array of integers and returns the sum of all the even numbers in the array.
+         */
+
+        //  Using inbuilt method
+        function sumOfEvenNUmber(array) {
+
+            if (Array.isArray(array)) {
+                console.log("it is an array");
+                let evenArray = array.filter((num) => {
+                    return num % 2 == 0
+                })
+
+                let sumOfEvenArray = evenArray.reduce((pv, cv) => {
+                    return pv + cv
+                })
+
+                console.log(sumOfEvenArray);
+
+
+            } else {
+                console.log(`A You idiot it is not an aray it is ${typeof array} give an array`);
+            }
+
+
+        }
+
+        sumOfEvenNUmber([1, 2, 3, 4, 5, 6])
+
+
+        // solving in another way
+        let findTheSumOfAnArray = (array) => {
+            let total = 0
+            if (Array.isArray(array)) {
+                for (let num of array) {
+                    if (num % 2 == 0) {
+                        total += num
+                    }
+                }
+            } else {
+                console.log("Sorry it is not an array");
+            }
+
+            console.log(total);
+
+        }
+
+
+        findTheSumOfAnArray([1, 2, 3, 4, 5, 6, 11])
+
+
+        /*--------------------Question 2:-------------------------------------
+        Write a function in JavaScript that takes a string as an input and returns the reverse of the string.
+        */
+
+        function reverseTheString(arg) {
+
+            if (typeof arg === 'string') {
+
+                console.log(arg.split("").reverse().join(""));// using inbuilt methods
+
+                let reverseString = ""
+
+                for (let i = arg.length - 1; i >= 0; i--) {
+                    reverseString += arg[i]
+                }
+
+                console.log(reverseString);
+
+
+            } else {
+                console.log("Sorry given argument is not a String");
+            }
+        }
+
+
+        reverseTheString("Laxmiputra")
+
+
+        /*
+        Question 3:
+        Write a function in JavaScript that takes an array of strings and returns an array of the same strings but with all vowels removed.
+        */
+
+
+        function vowelRemover(array) {
+            let vowels = ["a", "e", 'i', "o", "u"];
+            if (Array.isArray(array)) {
+                let arrayWithOutVowel = array.map((word) => {
+                    if (typeof word === 'string') {
+                        return word.split("").filter((letter) => {
+                            return !vowels.includes(letter.toLowerCase())
+                        }).join("")
+                    } else {
+                        return word
+                    }
+
+                })
+                console.log(arrayWithOutVowel);
+            } else {
+                console.log("Given argument is not an array");
+            }
+
+        }
+
+        vowelRemover(["coders", "never", "quit", 20]);
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
