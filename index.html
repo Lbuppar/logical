@@ -133,7 +133,98 @@
         */
 
 
-        
+        function minAndMax(array) {
+            console.log(Math.max(...array));
+            console.log(Math.min(...array));
+        }
+
+        minAndMax([20, 60, 50, 80,])
+
+
+
+        const maxmin = (array) => {
+
+            let currentMin = array[0];
+            let currentMax = array[0];
+
+            for (let i = 1; i < array.length; i++) {
+
+                if (array[i] < currentMin) {
+                    currentMin = array[i]
+                }
+
+                if (array[i] > currentMax) {
+                    currentMax = array[i]
+                }
+
+            }
+
+            console.log(currentMax);
+            console.log(currentMin);
+        }
+
+
+        maxmin([800, 12, 8, 15, 98, 75, 3])
+
+
+
+
+        /*
+        Question 5:
+        Write a function in JavaScript that takes an array of integers and returns a new array that contains only the unique values in the original array
+        */
+
+
+        function unique_array1(array) {
+            let newArray = [...new Set(array)]
+            console.log(newArray);
+        }
+
+        unique_array1([1, 3, 5, 7, 3, 1])
+
+
+        function unique_array2(array) {
+            let myUniqueArray = [];
+
+            for (let i = 0; i < array.length; i++) {
+                if (!myUniqueArray.includes(array[i])) {
+                    myUniqueArray.push(array[i])
+                }
+            }
+
+            console.log(myUniqueArray);
+
+        }
+
+        unique_array2([1, 3, 5, 7, 3, 1, 5, 15]);
+
+
+
+
+        /*
+        Question 6:
+        Write a function in JavaScript that takes a string as an input and returns the number of vowels in the string.
+        */
+
+        function numberOfVowelsIntheString(str) {
+
+            if (typeof str === 'string') {
+                let vowels = ["a", "e", "i", "o", "u"]
+                let vowelsCount = 0
+                for (let char of str) {
+                    if (vowels.includes(char.toLowerCase())) {
+                        vowelsCount++
+                    }
+                }
+                console.log(vowelsCount);
+
+            } else {
+                console.log('argument is not a String');
+            }
+
+        }
+
+        numberOfVowelsIntheString("Laxmi")
 
 
 
